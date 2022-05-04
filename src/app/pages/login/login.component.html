@@ -7,10 +7,10 @@
             <mat-label>Email</mat-label>
             <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. example@example.com" class="input">
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-              Please enter a valid email address
+              Por favor digite um email válido!
             </mat-error>
             <mat-error *ngIf="emailFormControl.hasError('required')">
-              Email is <strong>required</strong>
+              Email é <strong>obrigatório</strong>
             </mat-error>
           </mat-form-field>
           <br>
@@ -21,7 +21,12 @@
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
           </mat-form-field>
-          <button mat-flat-button class="subbuttons">Login</button>
+          <a href=""> <p>Esqueci minha senha</p> </a>
+          <div class="flexdiv">
+            <button mat-flat-button class="subbuttons btn-outline-success">Login</button> 
+            <button [routerLink]="['/home/register']" mat-flat-button class="subbuttons btn-outline-dark">Registrar</button> 
+          </div>
+          
         </form>
       </div>
     </mat-card-content>

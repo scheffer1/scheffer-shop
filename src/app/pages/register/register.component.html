@@ -1,1 +1,49 @@
-<p>register works!</p>
+<mat-card>
+    <mat-card-content>
+      <div class="container">
+        <form class="example-form">
+          <mat-card-title>Registro</mat-card-title>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. example@example.com" class="input">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Por favor digite um email válido!
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Insira sua senha</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" class="input" [formControl]="passwordFormControl">
+            <mat-error *ngIf="passwordFormControl.hasError('minLength') && !passwordFormControl.hasError('required')">
+              A sua senha é muito pequena!
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Senha é <strong>obrigatória</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Repita sua senha!</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" class="input" [formControl]="passwordFormControl">
+            <mat-error *ngIf="passwordFormControl.hasError('minLength') && !passwordFormControl.hasError('required')">
+              A sua senha é muito pequena!
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Senha é <strong>obrigatória</strong>
+            </mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <a href=""> <p>Esqueci minha senha</p> </a>
+          <div class="flexdiv">
+            <button mat-flat-button class="subbuttons btn-outline-success">Login</button> 
+            <button [routerLink]="['/home/register']" mat-flat-button class="subbuttons btn-outline-dark">Registrar</button> 
+          </div>
+          
+        </form>
+      </div>
+    </mat-card-content>
+</mat-card>
