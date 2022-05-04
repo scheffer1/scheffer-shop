@@ -30,3 +30,8 @@
     overflow: hidden;
 }
 
+.mat-card-image:hover{
+    width:130%;
+    height: 85%;
+}
+
