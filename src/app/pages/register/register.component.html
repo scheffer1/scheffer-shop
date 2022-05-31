@@ -36,11 +36,9 @@
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-          </mat-form-field>
-          <a href=""> <p>Esqueci minha senha</p> </a>
+          </mat-form-field>        
           <div class="flexdiv">
-            <button mat-flat-button class="subbuttons btn-outline-success">Login</button> 
-            <button [routerLink]="['/home/register']" mat-flat-button class="subbuttons btn-outline-dark">Registrar</button> 
+            <button mat-flat-button class="subbuttons btn-outline-dark">Registrar</button> 
           </div>
           
         </form>
